@@ -50,13 +50,13 @@ $(document).ready(function(){
     var orderName = $("input#ordername").val();
     var pizzaSize = $("input[name=size]:checked").val();
     var newPizza = new Pizza(pizzaSize);
-    var toppings = $('input.topping:checked').val();
-    debugger;
-      toppings.each(function(item){
 
-      var newTopping = new Topping(item)
-      newPizza.addTopping(newTopping);
+
+    $("input:checkbox[name=toppings]:checked").each(function(){
+      var topping = $(this).val();
+      newPizza.addTopping(topping);
     });
+
 
 // Dynamic order display as pizzas are added ----
 
