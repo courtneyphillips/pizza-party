@@ -1,11 +1,8 @@
 describe('Pizza', function(){
-
-// Spec made obselete by implementation of different base costs for different sized pizzas
-
-  // it("Begins at a base price of 10 dollars", function(){
-  //   var testPizza = new Pizza()
-  //   expect(testPizza.cost).to.equal(10);
-  // });
+  it("Does not cost anything until size and toppings are specified", function(){
+    var testPizza = new Pizza()
+    expect(testPizza.cost).to.equal(0);
+  });
 
   it("Begins with no toppings", function(){
     var testPizza = new Pizza()
@@ -38,9 +35,7 @@ describe('Pizza', function(){
 });
 
 
-
 describe('Topping', function(){
-
   it("Costs 1 dollar per each additional topping", function(){
     var testTopping = new Topping("olives")
     expect(testTopping.cost).to.equal(1);
@@ -48,9 +43,7 @@ describe('Topping', function(){
 });
 
 
-
 describe('Order', function(){
-
   it("Starts out empty", function(){
     var newOrder = new Order
     expect(newOrder.pizzas).to.eql([]);
@@ -80,5 +73,4 @@ describe('Order', function(){
     newOrder.add(newPizza2);
     expect(newOrder.checkout()).to.equal(22);
   });
-
 });

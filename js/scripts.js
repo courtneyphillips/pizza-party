@@ -9,11 +9,11 @@ Pizza.prototype.addTopping = function(topping){
 }
 
 Pizza.prototype.findCost = function(){
-  if (this.size == "small"){
+  if (this.size == "Small"){
     this.cost += 8;
-  } else if (this.size == "medium"){
+  } else if (this.size == "Medium"){
     this.cost += 10;
-  } else if (this.size == "large"){
+  } else if (this.size == "Large"){
     this.cost += 12;
   }
   this.cost += (this.toppings.length);
@@ -49,14 +49,14 @@ $(document).ready(function(){
     event.preventDefault();
     var orderName = $("input#contact").val();
     var newOrder = new Order(orderName);
-    $(".begin-order").fadeOut();
-    $(".order-form").fadeIn("slow");
+    $(".begin-order").hide();
+    $(".order-form").show();
     $("span#contact").text(orderName);
 
   $("form#new-pizza").submit(function(event){
     event.preventDefault();
-    var pizzaSize = $("input[name=size]:checked").val();
-    var newPizza = new Pizza(pizzaSize);
+    var size = $("input[name=size]:checked").val();
+    var newPizza = new Pizza(size);
     $("input:checkbox[name=toppings]:checked").each(function(){
       var topping = $(this).val();
       newPizza.addTopping(topping);
@@ -64,20 +64,19 @@ $(document).ready(function(){
 
     newOrder.add(newPizza);
 
-    $(".order-form").fadeOut("slow");
-    $(".summary").fadeIn("slow");
-
+    $(".order-form").hide();
+    $(".summary").show();
     $("span#username").text(orderName + "'s Order:");
     $("ul#orderlist").append("<li>" + newPizza.size + " pizza with: " + newPizza.toppings.join(', ') + "  -  $" + newPizza.findCost() + "</li>");
   });
 
     $("#addmore").click(function(){
-      $(".order-form").fadeIn();
+      $(".order-form").show();
       $(".summary").hide();
     });
 
     $("#checkout").click(function(){
-      $(".checkout-screen").fadeIn();
+      $(".checkout-screen").show();
       $(".prompt").hide();
       $(".order").show();
       $("span#cost").text(newOrder.checkout());
