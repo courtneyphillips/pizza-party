@@ -1,14 +1,15 @@
-/*.show-order {
-  display: none;
+.container {
+  margin-top: 25px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
-.order-display {
-  display: none;
-}
 
-.pizzachoices {
-  display none;
-}*/
+
+.jumbotron {
+  padding-left: 100px;
+  padding-right: 100px;
+}
 
 .order-form {
   display: none;
@@ -28,4 +29,25 @@
 
 .final {
   display: none;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+.col-md-4 {
+  margin: 6px;
+}
+
+/*.panel {
+  margin-left: auto;
+  margin-right: auto;
+  align: center;
+  width: auto;
+  height: auto
+}*/
+
+label {
+  font-size: 120%;
+  margin: 5px;
 }

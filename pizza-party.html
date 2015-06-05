@@ -16,73 +16,83 @@
 
 <!-- Order Begin Form ====================== -->
 
-      <div class="col-md=6">
+      <div class="container">
         <form id="begin-order">
           <div class="form-group begin-order">
             <label for="contact">Contact Person: </label>
-            <input type="text" class="form-control begin-order" id="contact" required>
-            <button type="submit" class="btn btn-block btn-primary begin-order">Begin Order</button>
+            <input type="text" class="form-control begin-order" id="contact" required><br>
+            <button type="submit" class="btn btn-block btn-primary begin-order">Begin Order </button>
           </div>
         </form>
-      </div>
 
 <!-- Pizza order form ====================== -->
 
-      <div class="row">
-        <div class="col-md-6">
-          <h3 class="order-form">Order for <span id="contact"></span></h3>
-          <h4><span id="number"></span></h4>
-          <form id="new-pizza">
-            <div class="form-group order-form"><br>
-              <label for="size">Pizza Size:  </label>
-              <label><input type="radio" name="size" value="Small"> Small</label>
-              <label><input type="radio" name="size" value="Medium"> Medium</label>
-              <label><input type="radio" name="size" value="Large"> Large</label>
+        <div class="panel panel-info order-form">
+
+          <div class="panel-heading">
+            <h2 class="panel-title"><h3 class="order-form">Order for <span id="contact"></span></h3></h2>
+          </div>
+          <div class="panel-body">
+            <form id="new-pizza">
+              <div class="form-group order-form">
+                <label for="size"><h3>Pizza Size:</h3></label><br>
+                <div class="col-md-3"><label><input type="radio" name="size" value="Small"> Small</label></div>
+                <div class="col-md-3"><label><input type="radio" name="size" value="Medium" checked> Medium</label></div>
+                <div class="col-md-3"><label><input type="radio" name="size" value="Large"> Large</label></div>
+                <br><br>
+                <div class="row">
+                <div class="panel-body">
+                  <label for="toppings"><h3>Toppings:</h3> <em>(all pizzas come with sauce and cheese)</em></label><br>
+                  <div class="col-md-3"><label><input type="checkbox" class="topping" name="toppings" value="Pepperoni"> Pepperoni</label></div>
+                  <div class="col-md-3"><label><input type="checkbox" class="topping" name="toppings" value="Sausage"> Sausage</label></div>
+                  <div class="col-md-3"><label><input type="checkbox" class="topping" name="toppings" value="Canadian Bacon"> Canadian Bacon</label></div>
+                  <div class="col-md-3"><label><input type="checkbox" class="topping" name="toppings" value="Pineapple"> Pineapple</label></div>
+                  <div class="col-md-3"><label><input type="checkbox" class="topping" name="toppings" value="Jalepeno"> Jalepenos</label></div>
+                  <div class="col-md-3"><label><input type="checkbox" class="topping" name="toppings" value="Tomatoes"> Tomatoes</label></div>
+                  <div class="col-md-3"><label><input type="checkbox" class="topping" name="toppings" value="Peppers"> Peppers</label></div>
+                  <div class="col-md-3"><label><input type="checkbox" class="topping" name="toppings" value="Artichoke"> Artichokes</label></div>
+                  <div class="col-md-3"><label><input type="checkbox" class="topping" name="toppings" value="Bacon"> Bacon</label></div>
+                  <div class="col-md-3"><label><input type="checkbox" class="topping" name="toppings" value="Fresh Veggies"> Fresh veggies</label></div>
+                </div>
+              </div>
             </div>
-            <div class="form-group order-form"><br>
-              <label for="toppings">Toppings: (all pizzas come with sauce and cheese)  </label><br>
-              <label><input type="checkbox" class="topping" name="toppings" value="Pepperoni"> Pepperoni</label>
-              <label><input type="checkbox" class="topping" name="toppings" value="Sausage"> Sausage</label>
-              <label><input type="checkbox" class="topping" name="toppings" value="Canadian Bacon"> Canadian Bacon</label>
-              <label><input type="checkbox" class="topping" name="toppings" value="Pineapple">Pineapple</label>
-              <label><input type="checkbox" class="topping" name="toppings" value="Jalepeno"> Jalepenos</label>
-              <label><input type="checkbox" class="topping" name="toppings" value="Tomatoes"> Tomatoes</label>
-              <label><input type="checkbox" class="topping" name="toppings" value="Peppers"> Peppers</label>
-              <label><input type="checkbox" class="topping" name="toppings" value="Artichoke"> Artichokes</label>
-              <label><input type="checkbox" class="topping" name="toppings" value="Bacon"> Bacon</label>
-              <label><input type="checkbox" class="topping" name="toppings" value="Fresh Veggies"> Fresh seasonal veggies</label>
-            </div>
-            <button type="submit" class="btn btn-block btn-default order-form">Add to Cart</button>
-          </form>
+          <button type="submit" class="btn btn-block btn-primary order-form">Add to Cart</button>
+        </form>
+      </div>
+    </div>
 
 <!-- Dynamic Order Display ==================== -->
 
 <!-- final thank-you message after ordering -->
 
-          <div class="final">
-            <h1>Thanks for your order!</h1>
-          </div>
+    <div class="final">
+      <h1>Thanks for your order!</h1>
+    </div>
 
 <!-- Order details and summary================= -->
 
-          <div class="summary">
-            <h2 class="prompt">You've succesfully added the following to your order:</h2>
-            <h3><span id="contact" class="summary"></span></h3>
-            <ul id="orderlist" class="summary"></ul>
-            <p class="final">Total: <span id="cost"></span></p>
-            <br><br>
-            <a class="btn btn-primary btn-lg prompt" id="addmore" role="button">Add another Pizza</a>
-            <a class="btn btn-primary btn-lg prompt" id="checkout" role="button">Review and Order</a>
+          <div class="panel panel-info summary order">
+            <div class="panel-heading summary order">
+              <h3 class="prompt panel-heading summary order">Current Order:</h3>
+            </div>
+            <div class="panel-body summary order">
+              <h3><span id="contact" class="summary"></span></h3>
+              <ul id="orderlist" class="summary"></ul>
+              <h3 class="final">Total: $<span id="cost"></span>.00</h3>
+            </div>
+            <br>
           </div>
+          <a class="btn btn-primary btn-lg prompt summary" id="addmore" role="button">Add another Pizza</a>
+          <a class="btn btn-primary btn-lg prompt summary" id="checkout" role="button">Review and Order</a>
+
 
 <!-- Checkout Screen ========================= -->
 
-          <div class="checkout-screen">
-            <div class="order">
-              <h3>Total Cost: $<span id="cost"></span></h3>
-              <a class="btn btn-primary btn-lg finalprompt" id="submit" role="button">Submit Order</a>
-              <a class="btn btn-primary btn-lg finalprompt" id="back" role="button">Go Back</a>
-            </div>
+
+          <div class="order finalprompt">
+            <h3>Final cost: $<span id="cost"></span>.00</h3><br>
+            <a class="btn btn-primary btn-lg finalprompt" id="submit" role="button">Submit</a>
+            <a class="btn btn-primary btn-lg finalprompt" id="back" role="button">Go Back</a>
           </div>
         </div>
       </div>

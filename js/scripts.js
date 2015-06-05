@@ -38,7 +38,7 @@ Order.prototype.add = function(pizza){
 Order.prototype.checkout = function(){
   var totalCost = this.total;
   (this.pizzas).forEach(function(pizza){
-    totalCost = totalCost + (pizza.findCost());
+    totalCost = totalCost + (pizza.cost);
   });
   return totalCost;
 }
@@ -67,34 +67,35 @@ $(document).ready(function(){
     $(".order-form").hide();
     $(".summary").show();
     $("span#username").text(orderName + "'s Order:");
-    $("ul#orderlist").append("<li>" + newPizza.size + " pizza with: " + newPizza.toppings.join(', ') + "  -  $" + newPizza.findCost() + "</li>");
+    $("ul#orderlist").append("<li>" + newPizza.size + " pizza with: Cheese, " + newPizza.toppings.join(', ') + "  -  $" + newPizza.findCost() + "</li>");
   });
 
-    $("#addmore").click(function(){
-      $(".order-form").show();
-      $(".summary").hide();
-    });
+  $("#addmore").click(function(){
+    $(".order-form").show();
+    $(".summary").hide();
+  });
 
-    $("#checkout").click(function(){
-      $(".checkout-screen").show();
-      $(".prompt").hide();
-      $(".order").show();
-      $("span#cost").text(newOrder.checkout());
-    });
+  $("#checkout").click(function(){
+    $(".checkout-screen").show();
+    $(".prompt").hide();
+    $(".order").show();
+    $("span#cost").text(newOrder.checkout());
+  });
 
-    $("#submit").click(function(){
-      $(".final").show();
-      $(".checkout-screen").hide();
-      $(".order").hide();
-      $(".finalprompt").show();
-      $(".checkout-screen").hide();
-    })
+  $("#submit").click(function(){
+    $(".final").show();
+    $(".checkout-screen").hide();
+    $(".order").hide();
+    $(".finalprompt").show();
+    $(".checkout-screen").hide();
+  })
 
-    $("#back").click(function(){
-      $(".order").hide();
-      $(".prompt").show();
-      $(".checkout-screen").show();
-      $("span#cost").text(newOrder.checkout());
+  $("#back").click(function(){
+    $(".prompt").show();
+    $(".final").hide();
+    $(".checkout-screen").show();
+    $(".finalprompt").hide();
+    $("span#cost").text(newOrder.checkout());
     });
   });
 });
