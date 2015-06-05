@@ -17,3 +17,15 @@
 .summary {
   display: none;
 }
+
+.checkout-screen {
+  display: none;
+}
+
+.order {
+  display: none;
+}
+
+.final {
+  display: none;
+}

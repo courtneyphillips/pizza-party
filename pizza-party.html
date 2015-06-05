@@ -68,12 +68,33 @@
 
 
           <div class="summary">
-            <h2>You've succesfully added the following to your order:</h2>
+            <h2 class="prompt">You've succesfully added the following to your order:</h2>
             <h3><span id="contact" class="summary"></span></h3>
+
             <ul id="orderlist" class="summary"></ul><br><br>
 
-            <a class="btn btn-primary btn-lg summary" id="addmore" role="button">Add another Pizza</a>
-            <a class="btn btn-primary btn-lg summary" id="checkout" role="button">Finalize Order</a>
+            <a class="btn btn-primary btn-lg prompt" id="addmore" role="button">Add another Pizza</a>
+            <a class="btn btn-primary btn-lg prompt" id="checkout" role="button">Finalize Order</a>
+
+          </div>
+
+<!-- Checkout Screen ========================== -->
+
+          <div class="checkout-screen">
+            <div class="order">
+              Final cost: $<span id="cost"></span>
+
+              <a class="btn btn-primary btn-lg prompt" id="submit" role="button">Order</a>
+              <a class="btn btn-primary btn-lg prompt" id="back" role="button">Go Back</a>
+
+
+            </div>
+
+          </div>
+
+
+          <div class="final">
+            THANKS FOR YOUR ORDER
 
           </div>
 
