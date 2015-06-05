@@ -33,7 +33,7 @@ describe('Topping', function(){
 
   it("Costs 1 dollar per each additional topping", function(){
     var testTopping = new Topping("olives")
-    expect(testTopping.cost).to.eql(1);
+    expect(testTopping.cost).to.equal(1);
   });
 });
 
@@ -58,6 +58,15 @@ describe('Order', function(){
     var newPizza2 = new Pizza("large")
     newOrder.add(newPizza2);
     expect(newOrder.pizzas).to.eql([newPizza, newPizza2]);
+  });
+
+  it("Calculates the total cost of all pizzas contained in the order", function(){
+    var newOrder = new Order("courtney")
+    var newPizza = new Pizza("medium")
+    newOrder.add(newPizza);
+    var newPizza2 = new Pizza("large")
+    newOrder.add(newPizza2);
+    expect(newOrder.checkout()).to.equal(24);
   });
 
 });

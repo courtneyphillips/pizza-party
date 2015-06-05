@@ -24,14 +24,22 @@ function Topping(name, cost){
 
 // Order object(s) and functions ----------------
 
-function Order(name, pizzas, cost){
+function Order(name, pizzas, total){
   this.pizzas = [];
-  this.cost = cost;
+  this.total = 0;
   this.name = name;
 }
 
 Order.prototype.add = function(pizza){
   (this.pizzas).push(pizza);
+}
+
+Order.prototype.checkout = function(){
+  var totalCost = this.total;
+  (this.pizzas).forEach(function(pizza){
+    totalCost += (pizza.findCost());
+  });
+  return totalCost;
 }
 
 // jQuery---------------------------------------------------------------
