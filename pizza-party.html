@@ -26,8 +26,6 @@
           <div class="form-group begin-order">
             <label for="contact">Contact Person: </label>
             <input type="text" class="form-control begin-order" id="contact" required>
-            <label for="phone">Contact Phone:  </label>
-            <input type="text" class="form-control begin-order" id="phone"><br>
             <button type="submit" class="btn btn-block btn-primary begin-order">Begin Order</button>
           </div>
         </form>
@@ -66,28 +64,18 @@
           </form>
 
 
-
 <!-- Dynamic Order Display ==================== -->
 
 
           <div class="summary">
             <h2>You've succesfully added the following to your order:</h2>
-            <h2><span id="username" class="summary"></span></h2>
-            <ul id="orderlist" class="summary"></ul>
+            <h3><span id="contact" class="summary"></span></h3>
+            <ul id="orderlist" class="summary"></ul><br><br>
 
             <a class="btn btn-primary btn-lg summary" id="addmore" role="button">Add another Pizza</a>
             <a class="btn btn-primary btn-lg summary" id="checkout" role="button">Finalize Order</a>
 
           </div>
-
-
-          <!-- <div class="order-display order-form col-md-6">
-            <div id="show-order">
-              <p><b>Task Name:</b>  <span class="task-name"></span></p>
-              <p><b>Due Date:</b>  <span class='due-date'></span></p>
-              <p><b>Task Description:</b>  <span class='toppings'></span></p>
-            </div>
-          </div> -->
 
 
         </div>

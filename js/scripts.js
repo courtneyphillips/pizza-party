@@ -51,12 +51,10 @@ $(document).ready(function(){
   $("form#begin-order").submit(function(event){
     event.preventDefault();
     var orderName = $("input#contact").val();
-    var number = $("input#phone").val();
     var newOrder = new Order(orderName);
     $(".begin-order").fadeOut();
     $(".order-form").fadeIn("slow");
-    $("#contact").text(orderName);
-    $("#number").text(number);
+    $("span#contact").text(orderName);
   });
 
 // Pizza form submission -----------------------
@@ -86,7 +84,7 @@ $(document).ready(function(){
 
   $("#checkout").click(function(){
     $(".checkout-screen").fadeIn();
-    
+
   })
 
 });
