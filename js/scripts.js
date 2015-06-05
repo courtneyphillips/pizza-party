@@ -86,7 +86,7 @@ $(document).ready(function(){
     $(".final").show();
     $(".checkout-screen").hide();
     $(".order").hide();
-    $(".finalprompt").show();
+    $(".finalprompt").hide();
     $(".checkout-screen").hide();
   })
 
