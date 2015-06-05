@@ -27,7 +27,6 @@ describe('Pizza', function(){
     testPizza.addTopping("mushrooms");
     expect(testPizza.findCost()).to.equal(14);
   });
-
 });
 
 describe('Topping', function(){
@@ -35,8 +34,8 @@ describe('Topping', function(){
   it("Costs 1 dollar per each additional topping", function(){
     var testTopping = new Topping("olives")
     expect(testTopping.cost).to.eql(1);
-  })
-})
+  });
+});
 
 describe('Order', function(){
 
@@ -44,5 +43,14 @@ describe('Order', function(){
     var newOrder = new Order
     expect(newOrder.pizzas).to.eql([]);
   });
+
+  // it("Contains multiple pizzas in a single order", function(){
+  //   var order = new Order;
+  //   var testPizza = new Pizza("medium")
+  //   testPizza.addOrder();
+  //   var testPizza2 = new Pizza("medium")
+  //   testPizza2.addOrder();
+  //   expect(order.pizzas).to.eql([{testPizza}, {testPizza2}])
+  // });
 
 });

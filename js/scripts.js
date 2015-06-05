@@ -15,9 +15,12 @@ Pizza.prototype.findCost = function(){
   return this.cost;
 }
 
-// Pizza.prototype.addCart = function(){
-//   var order = new Order
-//   this.push(orderPizzas);
+// Pizza.prototype.addOrder = function(name, pizza){
+//   var order = (new Order).pizzas
+//   order.push({
+//     name: name,
+//     pizza: this
+//   });
 // }
 
 //Toppings object(s) and functions --------------
@@ -29,10 +32,8 @@ function Topping(item, cost){
 
 // Order object(s) and functions ----------------
 
-var orderPizzas = [];
-
 function Order(name, pizzas, cost){
-  this.pizzas = orderPizzas;
+  this.pizzas = [];
   this.cost = cost;
   this.name = name;
 }
