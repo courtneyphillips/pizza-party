@@ -98,6 +98,8 @@ $(document).ready(function(){
       $(".final").show();
       $(".checkout-screen").hide();
       $(".order").hide();
+      $(".finalprompt").show();
+      $(".checkout-screen").hide();
     })
 
     $("#back").click(function(){

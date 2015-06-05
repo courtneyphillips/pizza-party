@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
@@ -9,15 +7,12 @@
     <script src="js/scripts.js"></script>
     <title>Pizza Party</title>
   </head>
-
-
   <body>
     <div class="container-fluid">
       <div class="jumbotron">
         <h1>Pizza Party!</h1>
         <p class="lead">Select your pizza order below:</p>
       </div>
-
 
 <!-- Order Begin Form ====================== -->
 
@@ -35,11 +30,8 @@
 
       <div class="row">
         <div class="col-md-6">
-
           <h3 class="order-form">Order for <span id="contact"></span></h3>
           <h4><span id="number"></span></h4>
-
-
           <form id="new-pizza">
             <div class="form-group order-form"><br>
               <label for="size">Pizza Size:  </label>
@@ -67,6 +59,14 @@
 <!-- Dynamic Order Display ==================== -->
 
 
+<!-- final thank-you message after ordering -->
+
+          <div class="final">
+            <h1>Thanks for your order!</h1>
+          </div>
+
+<!-- --------- -->
+
           <div class="summary">
             <h2 class="prompt">You've succesfully added the following to your order:</h2>
             <h3><span id="contact" class="summary"></span></h3>
@@ -82,23 +82,12 @@
 
           <div class="checkout-screen">
             <div class="order">
-              Final cost: $<span id="cost"></span>
+              <h3>Final cost: $<span id="cost"></span></h3>
 
-              <a class="btn btn-primary btn-lg prompt" id="submit" role="button">Order</a>
-              <a class="btn btn-primary btn-lg prompt" id="back" role="button">Go Back</a>
-
-
+              <a class="btn btn-primary btn-lg finalprompt" id="submit" role="button">Order</a>
+              <a class="btn btn-primary btn-lg finalprompt" id="back" role="button">Go Back</a>
             </div>
-
           </div>
-
-
-          <div class="final">
-            THANKS FOR YOUR ORDER
-
-          </div>
-
-
         </div>
       </div>
     </div>
