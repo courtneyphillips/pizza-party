@@ -21,7 +21,7 @@ describe('Pizza', function(){
     expect(testPizza.toppings).to.eql(["cheese", "sauce", "olives"]);
   });
 
-  it("Costs one dollar more for each added topping", function(){
+  it("Costs one dollar more for each added topping, calculates cost accordingly", function(){
     var testPizza = new Pizza("medium")
     testPizza.addTopping("olives");
     testPizza.addTopping("mushrooms");
@@ -37,3 +37,12 @@ describe('Topping', function(){
     expect(testTopping.cost).to.eql(1);
   })
 })
+
+describe('Order', function(){
+
+  it("Starts out empty", function(){
+    var newOrder = new Order
+    expect(newOrder.pizzas).to.eql([]);
+  });
+
+});
