@@ -1,5 +1,3 @@
-//Pizza object and functions --------------------
-
 function Pizza(size, toppings, cost){
   this.size = size
   this.toppings = []
@@ -22,14 +20,10 @@ Pizza.prototype.findCost = function(){
   return this.cost;
 }
 
-//Toppings object(s) and functions --------------
-
 function Topping(name, cost){
   this.name = name
   this.cost = 1
 }
-
-// Order object(s) and functions ----------------
 
 function Order(name, pizzas, total){
   this.pizzas = [];
@@ -49,11 +43,7 @@ Order.prototype.checkout = function(){
   return totalCost;
 }
 
-// jQuery---------------------------------------------------------------
-
 $(document).ready(function(){
-
-// Begin order function --------------------------------
 
   $("form#begin-order").submit(function(event){
     event.preventDefault();
@@ -62,8 +52,6 @@ $(document).ready(function(){
     $(".begin-order").fadeOut();
     $(".order-form").fadeIn("slow");
     $("span#contact").text(orderName);
-
-// Pizza form submission ---------------------------------
 
   $("form#new-pizza").submit(function(event){
     event.preventDefault();
@@ -79,20 +67,14 @@ $(document).ready(function(){
     $(".order-form").fadeOut("slow");
     $(".summary").fadeIn("slow");
 
-// Dynamic order display as pizzas are added --------------
-
     $("span#username").text(orderName + "'s Order:");
     $("ul#orderlist").append("<li>" + newPizza.size + " pizza with: " + newPizza.toppings.join(', ') + "  -  $" + newPizza.findCost() + "</li>");
   });
-
-// Add another pizza -------------------------------------
 
     $("#addmore").click(function(){
       $(".order-form").fadeIn();
       $(".summary").hide();
     });
-
-// Finalize Order ---------------------------------------
 
     $("#checkout").click(function(){
       $(".checkout-screen").fadeIn();
@@ -115,7 +97,5 @@ $(document).ready(function(){
       $(".checkout-screen").show();
       $("span#cost").text(newOrder.checkout());
     });
-
   });
-
 });
