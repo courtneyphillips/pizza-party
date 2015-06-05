@@ -37,3 +37,33 @@ function Order(name, pizzas, cost){
   this.cost = cost;
   this.name = name;
 }
+
+// jQuery---------------------------------------
+
+$(document).ready(function(){
+
+// Pizza form submission -----------------------
+
+  $("form#new-pizza").submit(function(event){
+    event.preventDefault();
+
+    var orderName = $("input#orderName").val();
+    var pizzaSize = $("input#size").val();
+    var pizzaToppings = $(':checkbox:checked').each(function(i){
+      pizzaToppings[i] = $(this).val();
+    });
+
+    var newPizza = { size: pizzaSize, toppings: pizzaToppings, cost: (newPizza.cost) };
+
+    $("ul#orderlist").append("<li id=" + newPizza.size; + "pizza with:" + "><span class='toppings'>" + newPizza.toppings; + "</span><span class='delete'> (remove) </span></li>");
+
+    // $(".task").last().click(function(){
+    //   $("#show-task").show();
+    //   $(".task-name").text(taskName);
+    //   $(".due-date").text(newTask.dueDate);
+    //   $(".task-description").text(newTask.taskDescription);
+    //   $(".done").text(newTask.completed);
+    // });
+
+  });
+});
