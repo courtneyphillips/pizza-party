@@ -1,43 +1,10 @@
-describe('Player', function() {
-  it("will return the positions of the pigs after rolled", function() {
-    var testPlayer = new Player ("Margie")
-    testPlayer.roll();
-    var possibilities = [1,2,3,4,5]
-    expect(possibilities).to.include(testPlayer.roll());
+describe('Pizza', function(){
+  it("Begins at a base price of 10 dollars", function(){
+    var testPizza = new Pizza()
+    expect(testPizza.cost).to.equal(10);
   });
-
-
-  it("returns score for player", function() {
-    var testPlayer = new Player("Margie");
-    testPlayer.roll();
-    expect(testPlayer.score).to.equal(60);
+  it("Begins with only cheese and sauce as toppings, unless otherwise specified to remove", function(){
+    var testPizza = new Pizza()
+    expect(testPizza.toppings).to.eql(["cheese", "sauce"])
   });
-
-  it("returns the winner when two players roll", function() {
-    var testPlayer1 = new Player("Margie");
-    var testPlayer2 = new Player("Frank");
-    testPlayer1.roll();
-    testPlayer1.roll();
-    testPlayer1.roll();
-    testPlayer1.roll();
-    testPlayer1.roll();
-    testPlayer1.roll();
-    testPlayer1.roll();
-    testPlayer1.roll();
-    testPlayer1.roll();
-    testPlayer1.roll();
-    testPlayer1.roll();
-    testPlayer1.roll();
-    expect(testPlayer1.wins(testPlayer2)).to.equal(testPlayer1);
-  })
-
-  //
-  // it("will return the name of a roll's outcome", function(){
-  //   var testPig = new Pig ("Gladys")
-  //   testPig.roll()
-  //   var possibilities = ["sleeping pig", "razorback", "trotter", "snouter", "leaning jowler"]
-  //   expect(possibilities).to.include()
-  //
-  // })
-
 });
