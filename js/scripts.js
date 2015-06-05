@@ -2,8 +2,8 @@
 
 function Pizza(size, toppings, cost){
   this.size = size
-  this.toppings = ["Cheese", "Sauce"]
-  this.cost = 10
+  this.toppings = []
+  this.cost = 0
 }
 
 Pizza.prototype.addTopping = function(topping){
@@ -11,6 +11,13 @@ Pizza.prototype.addTopping = function(topping){
 }
 
 Pizza.prototype.findCost = function(){
+  if (this.size == "small"){
+    this.cost += 8;
+  } else if (this.size == "medium"){
+    this.cost += 10;
+  } else if (this.size == "large"){
+    this.cost += 12;
+  }
   this.cost += (this.toppings.length);
   return this.cost;
 }
@@ -37,7 +44,7 @@ Order.prototype.add = function(pizza){
 Order.prototype.checkout = function(){
   var totalCost = this.total;
   (this.pizzas).forEach(function(pizza){
-    totalCost += (pizza.findCost());
+    totalCost = totalCost + (pizza.findCost());
   });
   return totalCost;
 }

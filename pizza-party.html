@@ -55,9 +55,7 @@
             <button type="submit" class="btn btn-block btn-default order-form">Add to Cart</button>
           </form>
 
-
 <!-- Dynamic Order Display ==================== -->
-
 
 <!-- final thank-you message after ordering -->
 
@@ -65,26 +63,24 @@
             <h1>Thanks for your order!</h1>
           </div>
 
-<!-- --------- -->
+<!-- Order details and summary================= -->
 
           <div class="summary">
             <h2 class="prompt">You've succesfully added the following to your order:</h2>
             <h3><span id="contact" class="summary"></span></h3>
-
-            <ul id="orderlist" class="summary"></ul><br><br>
-
+            <ul id="orderlist" class="summary"></ul>
+            <p class="final">Total: <span id="cost"></span></p>
+            <br><br>
             <a class="btn btn-primary btn-lg prompt" id="addmore" role="button">Add another Pizza</a>
-            <a class="btn btn-primary btn-lg prompt" id="checkout" role="button">Finalize Order</a>
-
+            <a class="btn btn-primary btn-lg prompt" id="checkout" role="button">Review and Order</a>
           </div>
 
-<!-- Checkout Screen ========================== -->
+<!-- Checkout Screen ========================= -->
 
           <div class="checkout-screen">
             <div class="order">
-              <h3>Final cost: $<span id="cost"></span></h3>
-
-              <a class="btn btn-primary btn-lg finalprompt" id="submit" role="button">Order</a>
+              <h3>Total Cost: $<span id="cost"></span></h3>
+              <a class="btn btn-primary btn-lg finalprompt" id="submit" role="button">Submit Order</a>
               <a class="btn btn-primary btn-lg finalprompt" id="back" role="button">Go Back</a>
             </div>
           </div>
