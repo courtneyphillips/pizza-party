@@ -1,7 +1,15 @@
-.show-order {
+/*.show-order {
   display: none;
 }
 
 .order-display {
+  display: none;
+}
+
+.pizzachoices {
+  display none;
+}*/
+
+.order-form {
   display: none;
 }
