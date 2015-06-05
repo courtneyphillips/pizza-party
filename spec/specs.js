@@ -21,6 +21,13 @@ describe('Pizza', function(){
     expect(testPizza.toppings).to.eql(["cheese", "sauce", "olives"]);
   });
 
+  it("Costs one dollar more for each added topping", function(){
+    var testPizza = new Pizza("medium")
+    testPizza.addTopping("olives");
+    testPizza.addTopping("mushrooms");
+    expect(testPizza.findCost()).to.equal(14);
+  });
+
 });
 
 describe('Topping', function(){

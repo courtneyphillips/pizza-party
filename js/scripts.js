@@ -10,7 +10,10 @@ Pizza.prototype.addTopping = function(topping){
   (this.toppings).push(topping);
 }
 
-
+Pizza.prototype.findCost = function(){
+  this.cost += (this.toppings.length);
+  return this.cost;
+}
 
 //Toppings object(s) and functions --------------
 
