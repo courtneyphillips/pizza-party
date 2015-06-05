@@ -7,7 +7,7 @@ describe('Pizza', function(){
 
   it("Begins with only cheese and sauce as toppings, unless otherwise specified to remove", function(){
     var testPizza = new Pizza()
-    expect(testPizza.toppings).to.eql(["cheese", "sauce"])
+    expect(testPizza.toppings).to.eql(["cheese", "sauce"]);
   });
 
   it("Has a user-chosen size (small, medium, large, etc.)", function(){
@@ -19,6 +19,14 @@ describe('Pizza', function(){
     var testPizza = new Pizza("medium")
     testPizza.addTopping("olives");
     expect(testPizza.toppings).to.eql(["cheese", "sauce", "olives"]);
-  })
+  });
 
 });
+
+describe('Topping', function(){
+
+  it("Costs 1 dollar per each additional topping", function(){
+    var testTopping = new Topping("olives")
+    expect(testTopping.cost).to.eql(1);
+  })
+})
