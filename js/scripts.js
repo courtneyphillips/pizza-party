@@ -25,8 +25,8 @@ Pizza.prototype.findCost = function(){
 
 //Toppings object(s) and functions --------------
 
-function Topping(item, cost){
-  this.item = item
+function Topping(name, cost){
+  this.name = name
   this.cost = 1
 }
 
@@ -48,16 +48,20 @@ $(document).ready(function(){
     event.preventDefault();
 
     var orderName = $("input#ordername").val();
-    var pizzaSize = $("input#size").val();
-    var pizzaToppings = [];
-    var pizzaToppings = $(':checkbox:checked').each(function(i){
-      pizzaToppings[i] = $(this).val();
-    })
+    var pizzaSize = $("input[name=size]:checked").val();
+    var newPizza = new Pizza(pizzaSize);
+    var toppings = $('input.topping:checked').val();
+    debugger;
+      toppings.each(function(item){
 
-    var newPizza = { size: pizzaSize, toppings: pizzaToppings };
+      var newTopping = new Topping(item)
+      newPizza.addTopping(newTopping);
+    });
+
+// Dynamic order display as pizzas are added ----
+
     $("span#username").text(orderName + "'s Order:");
-    $("ul#orderlist").append("<li>" + newPizza.size + "pizza with:" + newPizza.toppings + "</span></li>");
-
+    $("ul#orderlist").append("<li>" + newPizza.size + " pizza with:" + newPizza.toppings + "</span></li>");
   });
 
 });
