@@ -7,7 +7,7 @@ describe('Pizza', function(){
 
   it("Begins with only cheese and sauce as toppings, unless otherwise specified to remove", function(){
     var testPizza = new Pizza()
-    expect(testPizza.toppings).to.eql(["cheese", "sauce"]);
+    expect(testPizza.toppings).to.eql(["Cheese", "Sauce"]);
   });
 
   it("Has a user-chosen size (small, medium, large, etc.)", function(){
@@ -18,7 +18,7 @@ describe('Pizza', function(){
   it("Can have additional toppings added to it", function(){
     var testPizza = new Pizza("medium")
     testPizza.addTopping("olives");
-    expect(testPizza.toppings).to.eql(["cheese", "sauce", "olives"]);
+    expect(testPizza.toppings).to.eql(["Cheese", "Sauce", "olives"]);
   });
 
   it("Costs one dollar more for each added topping, calculates cost accordingly", function(){
@@ -44,13 +44,20 @@ describe('Order', function(){
     expect(newOrder.pizzas).to.eql([]);
   });
 
-  // it("Contains multiple pizzas in a single order", function(){
-  //   var order = new Order;
-  //   var testPizza = new Pizza("medium")
-  //   testPizza.addOrder();
-  //   var testPizza2 = new Pizza("medium")
-  //   testPizza2.addOrder();
-  //   expect(order.pizzas).to.eql([{testPizza}, {testPizza2}])
-  // });
+  it("Can have a pizza added to it", function(){
+    var newOrder = new Order("courtney")
+    var newPizza = new Pizza("medium")
+    newOrder.add(newPizza);
+    expect(newOrder.pizzas).to.eql([newPizza]);
+  });
+
+  it("Collects and compiles pizzas a user orders", function(){
+    var newOrder = new Order("courtney")
+    var newPizza = new Pizza("medium")
+    newOrder.add(newPizza);
+    var newPizza2 = new Pizza("large")
+    newOrder.add(newPizza2);
+    expect(newOrder.pizzas).to.eql([newPizza, newPizza2]);
+  });
 
 });
