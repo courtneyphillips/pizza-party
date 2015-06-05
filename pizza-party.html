@@ -69,9 +69,16 @@
 
 <!-- Dynamic Order Display ==================== -->
 
-          <h2><span id="username"></span></h2>
-          <ul id="orderlist">
-          </ul>
+
+          <div class="summary">
+            <h2>You've succesfully added the following to your order:</h2>
+            <h2><span id="username" class="summary"></span></h2>
+            <ul id="orderlist" class="summary"></ul>
+
+            <a class="btn btn-primary btn-lg summary" id="addmore" role="button">Add another Pizza</a>
+            <a class="btn btn-primary btn-lg summary" id="checkout" role="button">Finalize Order</a>
+
+          </div>
 
 
           <!-- <div class="order-display order-form col-md-6">

@@ -70,16 +70,23 @@ $(document).ready(function(){
       var topping = $(this).val();
       newPizza.addTopping(topping);
     });
-
-// Create new Order ---------------------
-
-
-
+    $(".order-form").fadeOut("slow");
+    $(".summary").fadeIn("slow");
 
 // Dynamic order display as pizzas are added ----
 
     $("span#username").text(orderName + "'s Order:");
     $("ul#orderlist").append("<li>" + newPizza.size + " pizza with: " + newPizza.toppings.join(', ') + "</span></li>");
   });
+
+  $("#addmore").click(function(){
+    $(".order-form").fadeIn();
+    $(".summary").hide();
+  });
+
+  $("#checkout").click(function(){
+    $(".checkout-screen").fadeIn();
+    
+  })
 
 });
